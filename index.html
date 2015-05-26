@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: Readme
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.Readme.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: Readme</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'>
+<h1 id="label-IB+topology">IB topology</h1>
+
+<p><code>ib_topology/run.rb</code></p>
+
+<p>Runs an <code>iblinkinfo</code> command and parses the output to generate
+an output file or files in a number of different possible formats. For now,
+that means editing <code>run.rb</code> to select the output format.</p>
+
+<h2 id="label-Class+documentation">Class documentation</h2>
+
+<p><a
+href="http://nesi.github.io/pan_ib_topology">nesi.github.io/pan_ib_topology</a></p>
+
+<p>Note that iblinkinfo_parser_.rb has switch and node name configuration
+data, tagged with rack location, so that parser can associate iblinkinfo
+output with the nodes and switches. Much of this is produced
+programmatically, by knowing the naming convention that maps node names to
+specific racks.</p>
+
+<h2 id="label-Men+at+Work">Men at Work</h2>
+
+<p>We can produce a * Slurm topology file * Confluence Wiki table showing the
+switches, with node names in table cells for each switch port * Excel XML
+file showing the switches, with node names in table cells for each switch
+port * Excel TSV file showing the switches, with node names in table cells
+for each switch port * YML file, with switches, ports and nodes * Dot file,
+showing the switches and links between them (which quickly becomes a mass
+of indistinguishable links ;( )</p>
+
+<p>Looking for a nice way to represent the network pictorially, which
+isn&#39;t as cluttered as the dot file.</p>
+</div></div>
+
+    <div id="footer">
+  Generated on Tue May 26 16:43:50 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.2.2).
+</div>
+
+  </body>
+</html>

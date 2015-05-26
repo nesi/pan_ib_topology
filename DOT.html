@@ -1,0 +1,531 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: DOT
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!DOT.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (D)</a> &raquo;
+    
+    
+    <span class="title">DOT</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: DOT
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">generators/gen_dot.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Produce a Graphviz dot file of the IB network. Render with dot -Tsvg -o
+file.svg file Nb. Our network is a bit large for this :)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gen-class_method" title="gen (class method)">+ (Object) <strong>gen</strong>(ib, file = &#39;iblinkinfo.dot&#39;, dot_cmd = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generate a dot formated  file from the IBLinkinfo data for use with
+graphviz.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#process_switch-class_method" title="process_switch (class method)">+ (Object) <strong>process_switch</strong>(fd, s, switches) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Process a switch.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="gen-class_method">
+  
+    + (<tt>Object</tt>) <strong>gen</strong>(ib, file = &#39;iblinkinfo.dot&#39;, dot_cmd = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Generate a dot formated  file from the IBLinkinfo data for use with
+graphviz.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>ib</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="IBLinkInfo.html" title="IBLinkInfo (class)">IBLinkInfo</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The data derived from an iblinkinfo command, and parsed by the IBLinkInfo
+class parser</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>file</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;iblinkinfo.dot&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the output file (produces the .dot file and a .png, if dot_cmd
+!= nil)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'generators/gen_dot.rb', line 9</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_gen'>gen</span><span class='lparen'>(</span><span class='id identifier rubyid_ib'>ib</span><span class='comma'>,</span> <span class='id identifier rubyid_file'>file</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>iblinkinfo.dot</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_dot_cmd'>dot_cmd</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='comment'>#Output dot graph of switches
+</span>  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_file'>file</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>w</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_fd'>fd</span><span class='op'>|</span>
+    <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>    digraph g {
+    graph [
+      rankdir = &quot;TB&quot;
+      ratio = auto;
+    ];
+</span><span class='heredoc_end'>  EOF
+</span>
+    <span class='id identifier rubyid_ib'>ib</span><span class='period'>.</span><span class='id identifier rubyid_switches'>switches</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
+      <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_k'>k</span><span class='embexpr_end'>}</span><span class='tstring_content'>\&quot; [</span><span class='tstring_end'>&quot;</span></span> <span class='comment'>#Node name
+</span>      <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>label=&lt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;\&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>9</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>\&quot;&lt;/td&gt;&lt;/tr&gt;</span><span class='tstring_end'>&quot;</span></span> <span class='comment'>#First port
+</span>      <span class='lparen'>(</span><span class='int'>2</span><span class='op'>..</span><span class='int'>36</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+        <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;tr&gt;&lt;td&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>9</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&lt;/td&gt;&lt;/tr&gt;</span><span class='tstring_end'>&quot;</span></span> <span class='comment'>#Other 35 ports
+</span>      <span class='kw'>end</span>
+      <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;/table&gt;&gt;\nshape = \&quot;Mrecord\&quot;\n</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>];</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='ivar'>@been_there</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+    <span class='id identifier rubyid_backbone'>backbone</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='comment'># These should be in a config file. Defined to make picture centered on the core.
+</span>      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5200-a2-bip-m:IS5200/S01/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5200-a2-bip-m:IS5200/S02/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5200-a2-bip-m:IS5200/S03/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5200-a2-bip-m:IS5200/S04/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5200-a2-bip-m:IS5200/S05/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5200-a2-bip-m:IS5200/S06/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5300-c4-bip-m:IS5300/S01/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5300-c4-bip-m:IS5300/S02/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5300-c4-bip-m:IS5300/S03/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5300-c4-bip-m:IS5300/S04/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5300-c4-bip-m:IS5300/S05/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5300-c4-bip-m:IS5300/S06/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5300-c4-bip-m:IS5300/S07/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5300-c4-bip-m:IS5300/S08/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib0-is5300-c4-bip-m:IS5300/S09/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib-sx6036-a2-001-m:SX6036/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib-sx6036-a2-002-m:SX6036/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MF0;ib-sx6036-a2-003-m:SX6036/U1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='rbracket'>]</span>
+
+    <span class='ivar'>@sub_switches</span> <span class='op'>=</span> <span class='id identifier rubyid_backbone'>backbone</span>
+
+    <span class='kw'>while</span> <span class='ivar'>@sub_switches</span> <span class='op'>!=</span> <span class='kw'>nil</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@sub_switches</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>0</span> <span class='kw'>do</span>
+      <span class='ivar'>@next_layer</span> <span class='op'>=</span> <span class='ivar'>@sub_switches</span>
+      <span class='ivar'>@sub_switches</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+      <span class='ivar'>@next_layer</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_l'>l</span><span class='op'>|</span>
+        <span class='id identifier rubyid_process_switch'>process_switch</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='id identifier rubyid_l'>l</span><span class='comma'>,</span> <span class='id identifier rubyid_ib'>ib</span><span class='period'>.</span><span class='id identifier rubyid_switches'>switches</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+      <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  
+  <span class='comment'>#system(&quot;#{dot_cmd} -Tpng -o #{file.gsub(/\..+$/,&#39;&#39;)}.png -Tcmapx -o #{file.gsub(/\..+$/,&#39;&#39;)}_map.html #{file}&quot;)  if dot_cmd != nil
+</span>  <span class='id identifier rubyid_system'>system</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dot_cmd'>dot_cmd</span><span class='embexpr_end'>}</span><span class='tstring_content'> -Tpng -o </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\..+$</span><span class='regexp_end'>/</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>.png  </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_file'>file</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>   <span class='kw'>if</span> <span class='id identifier rubyid_dot_cmd'>dot_cmd</span> <span class='op'>!=</span> <span class='kw'>nil</span>
+  
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="process_switch-class_method">
+  
+    + (<tt>Object</tt>) <strong>process_switch</strong>(fd, s, switches) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Process a switch</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>fd</span>
+      
+      
+        <span class='type'>(<tt>File</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>File descriptor for the output file</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>s</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Array&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>This switches port array</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>switches</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The other switches we know about, so we can reference information about
+them</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'generators/gen_dot.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_process_switch'>process_switch</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='id identifier rubyid_s'>s</span><span class='comma'>,</span> <span class='id identifier rubyid_switches'>switches</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_v'>v</span> <span class='op'>=</span> <span class='id identifier rubyid_switches'>switches</span><span class='lbracket'>[</span><span class='id identifier rubyid_s'>s</span><span class='rbracket'>]</span> <span class='comment'>#get port array
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_v'>v</span> <span class='op'>==</span> <span class='kw'>nil</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>***** switch </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_s'>s</span><span class='embexpr_end'>}</span><span class='tstring_content'> not found</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>return</span>
+  <span class='kw'>end</span>
+  <span class='lparen'>(</span><span class='int'>1</span><span class='op'>..</span><span class='int'>36</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span> <span class='comment'>#Each switch is 36 ports
+</span>      <span class='id identifier rubyid_target'>target</span> <span class='op'>=</span> <span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>9</span><span class='rbracket'>]</span> <span class='comment'>#Potential target switch
+</span>      <span class='kw'>if</span> <span class='id identifier rubyid_switches'>switches</span><span class='lbracket'>[</span><span class='id identifier rubyid_target'>target</span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='kw'>nil</span> <span class='op'>&amp;&amp;</span> <span class='comment'>#It is a switch
+</span>        <span class='kw'>if</span>  <span class='ivar'>@been_there</span><span class='lbracket'>[</span><span class='id identifier rubyid_s'>s</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='kw'>nil</span>
+          <span class='ivar'>@been_there</span><span class='lbracket'>[</span><span class='id identifier rubyid_s'>s</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_target'>target</span><span class='rbracket'>]</span>
+          <span class='id identifier rubyid_go'>go</span> <span class='op'>=</span> <span class='kw'>true</span>
+        <span class='kw'>elsif</span>  <span class='ivar'>@been_there</span><span class='lbracket'>[</span><span class='id identifier rubyid_s'>s</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span><span class='lparen'>(</span><span class='id identifier rubyid_target'>target</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='kw'>false</span> 
+          <span class='ivar'>@been_there</span><span class='lbracket'>[</span><span class='id identifier rubyid_s'>s</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_target'>target</span>
+          <span class='id identifier rubyid_go'>go</span> <span class='op'>=</span> <span class='kw'>true</span>
+        <span class='kw'>end</span>
+        <span class='kw'>if</span>  <span class='ivar'>@been_there</span><span class='lbracket'>[</span><span class='id identifier rubyid_target'>target</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='kw'>nil</span>
+          <span class='ivar'>@been_there</span><span class='lbracket'>[</span><span class='id identifier rubyid_target'>target</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_s'>s</span><span class='rbracket'>]</span>
+          <span class='id identifier rubyid_go'>go</span> <span class='op'>=</span> <span class='kw'>true</span>
+        <span class='kw'>elsif</span>  <span class='ivar'>@been_there</span><span class='lbracket'>[</span><span class='id identifier rubyid_target'>target</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span><span class='lparen'>(</span><span class='id identifier rubyid_s'>s</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='kw'>false</span> 
+          <span class='ivar'>@been_there</span><span class='lbracket'>[</span><span class='id identifier rubyid_target'>target</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_s'>s</span>
+          <span class='id identifier rubyid_go'>go</span> <span class='op'>=</span> <span class='kw'>true</span>
+        <span class='kw'>end</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_go'>go</span>
+          <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_s'>s</span><span class='embexpr_end'>}</span><span class='tstring_content'>\&quot; -&gt; \&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_target'>target</span><span class='embexpr_end'>}</span><span class='tstring_content'>\&quot;</span><span class='tstring_end'>&quot;</span></span> <span class='comment'>#Dot link format, representing a physical linke between switches
+</span>          <span class='ivar'>@sub_switches</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_target'>target</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue May 26 16:43:50 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.2.2).
+</div>
+
+  </body>
+</html>

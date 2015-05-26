@@ -1,0 +1,1496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Excel_XML
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Excel_XML.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (E)</a> &raquo;
+    
+    
+    <span class="title">Excel_XML</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Excel_XML
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">generators/gen_excel_xml.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Generate an Excel XML file from the IBLinkInfo data. Switches and their
+ports are shown.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#excel_xml_footer-class_method" title="excel_xml_footer (class method)">+ (Object) <strong>excel_xml_footer</strong>(fd) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generates closing XML.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#excel_xml_header-class_method" title="excel_xml_header (class method)">+ (Object) <strong>excel_xml_header</strong>(fd, switch_count) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Excel XML file lead in.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#excel_xml_last_row-class_method" title="excel_xml_last_row (class method)">+ (Object) <strong>excel_xml_last_row</strong>(fd) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generates the xml table&#39;s last row&#39;s formatting for the switch.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#excel_xml_row-class_method" title="excel_xml_row (class method)">+ (Object) <strong>excel_xml_row</strong>(fd, start, end_val, v, location, inc) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generates the xml table&#39;s last row&#39;s formatting for the switch.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#excel_xml_table_header-class_method" title="excel_xml_table_header (class method)">+ (Object) <strong>excel_xml_table_header</strong>(fd, start, end_val, inc) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generates the table header for a switch.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#excel_xml_table_start-class_method" title="excel_xml_table_start (class method)">+ (Object) <strong>excel_xml_table_start</strong>(fd, switch_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generates the xml table&#39;s first row&#39;s XML formatting for the
+switch.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gen-class_method" title="gen (class method)">+ (Object) <strong>gen</strong>(ib, file = &quot;iblinkinfo.xml&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generate a XML formated Excel file from the IBLinkinfo data.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="excel_xml_footer-class_method">
+  
+    + (<tt>Object</tt>) <strong>excel_xml_footer</strong>(fd) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Generates closing XML</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>fd</span>
+      
+      
+        <span class='type'>(<tt>File</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>File descriptor for the output file</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'generators/gen_excel_xml.rb', line 329</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_excel_xml_footer'>excel_xml_footer</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>  &lt;/Table&gt;
+  &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
+   &lt;PageLayoutZoom&gt;0&lt;/PageLayoutZoom&gt;
+   &lt;Selected/&gt;
+   &lt;Panes&gt;
+    &lt;Pane&gt;
+     &lt;Number&gt;3&lt;/Number&gt;
+     &lt;ActiveRow&gt;10&lt;/ActiveRow&gt;
+     &lt;ActiveCol&gt;11&lt;/ActiveCol&gt;
+    &lt;/Pane&gt;
+   &lt;/Panes&gt;
+   &lt;ProtectObjects&gt;False&lt;/ProtectObjects&gt;
+   &lt;ProtectScenarios&gt;False&lt;/ProtectScenarios&gt;
+  &lt;/WorksheetOptions&gt;
+ &lt;/Worksheet&gt;
+&lt;/Workbook&gt;
+</span><span class='heredoc_end'>EOF
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="excel_xml_header-class_method">
+  
+    + (<tt>Object</tt>) <strong>excel_xml_header</strong>(fd, switch_count) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Excel XML file lead in</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>fd</span>
+      
+      
+        <span class='type'>(<tt>File</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>File descriptor for the output file</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>switch_count</span>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The number of switches (hence the number of tables we need to generate,
+hence number of rows in total).</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'generators/gen_excel_xml.rb', line 91</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_excel_xml_header'>excel_xml_header</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='id identifier rubyid_switch_count'>switch_count</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;Workbook xmlns=&quot;urn:schemas-microsoft-com:office:spreadsheet&quot;
+xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;
+xmlns:x=&quot;urn:schemas-microsoft-com:office:excel&quot;
+xmlns:ss=&quot;urn:schemas-microsoft-com:office:spreadsheet&quot;
+xmlns:html=&quot;http://www.w3.org/TR/REC-html40&quot;&gt;
+&lt;DocumentProperties xmlns=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+&lt;Author&gt;rbur004&lt;/Author&gt;
+&lt;LastAuthor&gt;rbur004&lt;/LastAuthor&gt;
+&lt;Created&gt;2015-01-12T23:01:09Z&lt;/Created&gt;
+&lt;LastSaved&gt;2015-01-12T22:56:15Z&lt;/LastSaved&gt;
+&lt;Company&gt;UoA&lt;/Company&gt;
+&lt;Version&gt;14.0&lt;/Version&gt;
+&lt;/DocumentProperties&gt;
+&lt;OfficeDocumentSettings xmlns=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+&lt;AllowPNG/&gt;
+&lt;/OfficeDocumentSettings&gt;
+&lt;ExcelWorkbook xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
+&lt;WindowHeight&gt;23900&lt;/WindowHeight&gt;
+&lt;WindowWidth&gt;39720&lt;/WindowWidth&gt;
+&lt;WindowTopX&gt;4960&lt;/WindowTopX&gt;
+&lt;WindowTopY&gt;140&lt;/WindowTopY&gt;
+&lt;ProtectStructure&gt;False&lt;/ProtectStructure&gt;
+&lt;ProtectWindows&gt;False&lt;/ProtectWindows&gt;
+&lt;/ExcelWorkbook&gt;
+&lt;Styles&gt;
+&lt;Style ss:ID=&quot;Default&quot; ss:Name=&quot;Normal&quot;&gt;
+ &lt;Alignment ss:Vertical=&quot;Bottom&quot;/&gt;
+ &lt;Borders/&gt;
+ &lt;Font ss:FontName=&quot;Calibri&quot; x:Family=&quot;Swiss&quot; ss:Size=&quot;12&quot; ss:Color=&quot;#000000&quot;/&gt;
+ &lt;Interior/&gt;
+ &lt;NumberFormat/&gt;
+ &lt;Protection/&gt;
+&lt;/Style&gt;
+&lt;Style ss:ID=&quot;s63&quot;&gt;
+ &lt;Borders&gt;
+&lt;Border ss:Position=&quot;Left&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+&lt;Border ss:Position=&quot;Right&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+&lt;Border ss:Position=&quot;Top&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+ &lt;/Borders&gt;
+&lt;/Style&gt;
+&lt;Style ss:ID=&quot;s64&quot;&gt;
+ &lt;Borders&gt;
+&lt;Border ss:Position=&quot;Bottom&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+&lt;Border ss:Position=&quot;Left&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+&lt;Border ss:Position=&quot;Right&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+ &lt;/Borders&gt;
+&lt;/Style&gt;
+&lt;Style ss:ID=&quot;s65&quot;&gt;
+ &lt;Borders&gt;
+&lt;Border ss:Position=&quot;Left&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+&lt;Border ss:Position=&quot;Top&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+ &lt;/Borders&gt;
+ &lt;Font ss:FontName=&quot;Calibri&quot; x:Family=&quot;Swiss&quot; ss:Size=&quot;12&quot; ss:Color=&quot;#000000&quot;
+ss:Bold=&quot;1&quot;/&gt;
+&lt;/Style&gt;
+&lt;Style ss:ID=&quot;s66&quot;&gt;
+ &lt;Borders&gt;
+&lt;Border ss:Position=&quot;Top&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+ &lt;/Borders&gt;
+&lt;/Style&gt;
+&lt;Style ss:ID=&quot;s67&quot;&gt;
+ &lt;Borders&gt;
+&lt;Border ss:Position=&quot;Right&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+&lt;Border ss:Position=&quot;Top&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+ &lt;/Borders&gt;
+&lt;/Style&gt;
+&lt;Style ss:ID=&quot;s68&quot;&gt;
+ &lt;Borders&gt;
+&lt;Border ss:Position=&quot;Left&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+ &lt;/Borders&gt;
+&lt;/Style&gt;
+&lt;Style ss:ID=&quot;s69&quot;&gt;
+ &lt;Borders/&gt;
+ &lt;Font ss:FontName=&quot;Calibri&quot; x:Family=&quot;Swiss&quot; ss:Size=&quot;12&quot; ss:Color=&quot;#000000&quot;
+ss:Bold=&quot;1&quot;/&gt;
+&lt;/Style&gt;
+&lt;Style ss:ID=&quot;s70&quot;&gt;
+ &lt;Borders&gt;
+&lt;Border ss:Position=&quot;Right&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+ &lt;/Borders&gt;
+&lt;/Style&gt;
+&lt;Style ss:ID=&quot;s71&quot;&gt;
+ &lt;Borders/&gt;
+&lt;/Style&gt;
+&lt;Style ss:ID=&quot;s72&quot;&gt;
+ &lt;Borders&gt;
+&lt;Border ss:Position=&quot;Bottom&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+&lt;Border ss:Position=&quot;Left&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+ &lt;/Borders&gt;
+&lt;/Style&gt;
+&lt;Style ss:ID=&quot;s73&quot;&gt;
+ &lt;Borders&gt;
+&lt;Border ss:Position=&quot;Bottom&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+ &lt;/Borders&gt;
+&lt;/Style&gt;
+&lt;Style ss:ID=&quot;s74&quot;&gt;
+ &lt;Borders&gt;
+&lt;Border ss:Position=&quot;Bottom&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+&lt;Border ss:Position=&quot;Right&quot; ss:LineStyle=&quot;Continuous&quot; ss:Weight=&quot;2&quot;/&gt;
+ &lt;/Borders&gt;
+&lt;/Style&gt;
+&lt;/Styles&gt;
+&lt;Worksheet ss:Name=&quot;iblinkinfo_excel.txt&quot;&gt;
+&lt;Table ss:ExpandedColumnCount=&quot;21&quot; ss:ExpandedRowCount=&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_switch_count'>switch_count</span><span class='op'>*</span><span class='int'>8</span><span class='embexpr_end'>}</span><span class='tstring_content'>&quot; x:FullColumns=&quot;1&quot;
+x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+&lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;22&quot;/&gt;
+&lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;88&quot; ss:Span=&quot;8&quot;/&gt;
+&lt;Column ss:Index=&quot;11&quot; ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;12&quot;/&gt;
+&lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;88&quot; ss:Span=&quot;8&quot;/&gt;
+&lt;Column ss:Index=&quot;21&quot; ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;19&quot;/&gt;
+</span><span class='heredoc_end'>EOF
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="excel_xml_last_row-class_method">
+  
+    + (<tt>Object</tt>) <strong>excel_xml_last_row</strong>(fd) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Generates the xml table&#39;s last row&#39;s formatting for the switch</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>fd</span>
+      
+      
+        <span class='type'>(<tt>File</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>File descriptor for the output file</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'generators/gen_excel_xml.rb', line 261</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_excel_xml_last_row'>excel_xml_last_row</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>  &lt;Row ss:Height=&quot;16&quot;&gt;
+   &lt;Cell ss:StyleID=&quot;s72&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s73&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s74&quot;/&gt;
+  &lt;/Row&gt;
+</span><span class='heredoc_end'>EOF
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="excel_xml_row-class_method">
+  
+    + (<tt>Object</tt>) <strong>excel_xml_row</strong>(fd, start, end_val, v, location, inc) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Generates the xml table&#39;s last row&#39;s formatting for the switch</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>fd</span>
+      
+      
+        <span class='type'>(<tt>File</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>File descriptor for the output file</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>start</span>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Table row start value (first port)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>end</span>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Table row end value (last port this row)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>v</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Array&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Array of ports (which are an array).</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>location</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The rack location of the node on this port.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>inc</span>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Usually 1 for sequential port numbering, or 2 for port numbering top and
+bottom row.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'generators/gen_excel_xml.rb', line 296</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_excel_xml_row'>excel_xml_row</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='id identifier rubyid_start'>start</span><span class='comma'>,</span> <span class='id identifier rubyid_end_val'>end_val</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_location'>location</span><span class='comma'>,</span> <span class='id identifier rubyid_inc'>inc</span> <span class='rparen'>)</span>
+        <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>   &lt;Row ss:Height=&quot;16&quot;&gt;
+    &lt;Cell ss:StyleID=&quot;s68&quot;/&gt;
+</span><span class='heredoc_end'>EOF
+</span>        <span class='id identifier rubyid_gap'>gap</span> <span class='op'>=</span> <span class='id identifier rubyid_start'>start</span> <span class='op'>+</span> <span class='int'>9</span> <span class='op'>*</span> <span class='id identifier rubyid_inc'>inc</span>
+        <span class='comment'>#Output the location
+</span>        <span class='lparen'>(</span><span class='id identifier rubyid_start'>start</span><span class='op'>..</span><span class='id identifier rubyid_end_val'>end_val</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_step'>step</span><span class='lparen'>(</span><span class='id identifier rubyid_inc'>inc</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+          <span class='id identifier rubyid_l'>l</span> <span class='op'>=</span> <span class='id identifier rubyid_location'>location</span><span class='lbracket'>[</span><span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>9</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+          <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>    &lt;Cell ss:StyleID=\&quot;s71\&quot;/&gt;\n</span><span class='tstring_end'>&quot;</span></span>  <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>==</span> <span class='id identifier rubyid_gap'>gap</span>
+          <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>    &lt;Cell ss:StyleID=\&quot;s63\&quot;&gt;&lt;Data ss:Type=\&quot;String\&quot;&gt;</span><span class='tstring_end'>&quot;</span></span>
+          <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='id identifier rubyid_l'>l</span> <span class='op'>==</span> <span class='kw'>nil</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_l'>l</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>/P</span><span class='embexpr_beg'>#{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%02d</span><span class='tstring_end'>&quot;</span></span><span class='op'>%</span><span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>7</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+          <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;/Data&gt;&lt;/Cell&gt;\n</span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+        <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>    &lt;Cell ss:StyleID=\&quot;s70\&quot;/&gt;\n   &lt;/Row&gt;\n</span><span class='tstring_end'>&quot;</span></span>
+
+        <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>   &lt;Row ss:Height=&quot;16&quot;&gt;
+    &lt;Cell ss:StyleID=&quot;s68&quot;/&gt;
+</span><span class='heredoc_end'>EOF
+</span>        <span class='comment'>#Output the name of the client node
+</span>        <span class='lparen'>(</span><span class='id identifier rubyid_start'>start</span><span class='op'>..</span><span class='id identifier rubyid_end_val'>end_val</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_step'>step</span><span class='lparen'>(</span><span class='id identifier rubyid_inc'>inc</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+          <span class='id identifier rubyid_l'>l</span> <span class='op'>=</span> <span class='id identifier rubyid_location'>location</span><span class='lbracket'>[</span><span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>9</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+          <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>    &lt;Cell ss:StyleID=\&quot;s71\&quot;/&gt;\n</span><span class='tstring_end'>&quot;</span></span>  <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>==</span> <span class='id identifier rubyid_gap'>gap</span>
+          <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>    &lt;Cell ss:StyleID=\&quot;s64\&quot;&gt;&lt;Data ss:Type=\&quot;String\&quot;&gt;</span><span class='tstring_end'>&quot;</span></span>
+          <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_l'>l</span> <span class='op'>==</span> <span class='kw'>nil</span> <span class='op'>?</span> <span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>9</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_l'>l</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>/P</span><span class='embexpr_beg'>#{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%02d</span><span class='tstring_end'>&quot;</span></span><span class='op'>%</span><span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>7</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># Don&#39;t have a location : do have a location
+</span>          <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;/Data&gt;&lt;/Cell&gt;\n</span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+        <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>    &lt;Cell ss:StyleID=\&quot;s70\&quot;/&gt;\n   &lt;/Row&gt;\n</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="excel_xml_table_header-class_method">
+  
+    + (<tt>Object</tt>) <strong>excel_xml_table_header</strong>(fd, start, end_val, inc) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Generates the table header for a switch</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>fd</span>
+      
+      
+        <span class='type'>(<tt>File</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>File descriptor for the output file</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>start</span>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Table row start value (first port)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>end</span>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Table row end value (last port this row)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>inc</span>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Usually 1 for sequential port numbering, or 2 for port numbering top and
+bottom row.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'generators/gen_excel_xml.rb', line 212</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_excel_xml_table_header'>excel_xml_table_header</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='id identifier rubyid_start'>start</span><span class='comma'>,</span> <span class='id identifier rubyid_end_val'>end_val</span><span class='comma'>,</span> <span class='id identifier rubyid_inc'>inc</span> <span class='rparen'>)</span>
+  <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>   &lt;Row ss:Height=&quot;16&quot;&gt;
+     &lt;Cell ss:StyleID=&quot;s68&quot;/&gt;
+</span><span class='heredoc_end'>EOF
+</span>  <span class='id identifier rubyid_gap'>gap</span> <span class='op'>=</span> <span class='id identifier rubyid_start'>start</span> <span class='op'>+</span> <span class='int'>9</span> <span class='op'>*</span> <span class='id identifier rubyid_inc'>inc</span>
+  <span class='lparen'>(</span><span class='id identifier rubyid_start'>start</span><span class='op'>..</span><span class='id identifier rubyid_end_val'>end_val</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_step'>step</span><span class='lparen'>(</span><span class='id identifier rubyid_inc'>inc</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>       &lt;Cell ss:StyleID=\&quot;s69\&quot;/&gt;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>==</span> <span class='id identifier rubyid_gap'>gap</span>
+    <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>       &lt;Cell ss:StyleID=\&quot;s69\&quot;&gt;&lt;Data ss:Type=\&quot;Number\&quot;&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_i'>i</span><span class='embexpr_end'>}</span><span class='tstring_content'>&lt;/Data&gt;&lt;/Cell&gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>    &lt;Cell ss:StyleID=&quot;s70&quot;/&gt;
+  &lt;/Row&gt;
+</span><span class='heredoc_end'>EOF
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="excel_xml_table_start-class_method">
+  
+    + (<tt>Object</tt>) <strong>excel_xml_table_start</strong>(fd, switch_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Generates the xml table&#39;s first row&#39;s XML formatting for the switch</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>fd</span>
+      
+      
+        <span class='type'>(<tt>File</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>File descriptor for the output file</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>switch_name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>For labelling the row</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'generators/gen_excel_xml.rb', line 231</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_excel_xml_table_start'>excel_xml_table_start</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span><span class='id identifier rubyid_switch_name'>switch_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>  &lt;Row&gt;
+   &lt;Cell ss:StyleID=&quot;s65&quot;&gt;&lt;Data ss:Type=&quot;String&quot;&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_switch_name'>switch_name</span><span class='embexpr_end'>}</span><span class='tstring_content'>&lt;/Data&gt;&lt;/Cell&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s66&quot;/&gt;
+   &lt;Cell ss:StyleID=&quot;s67&quot;/&gt;
+  &lt;/Row&gt;
+</span><span class='heredoc_end'>  EOF
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="gen-class_method">
+  
+    + (<tt>Object</tt>) <strong>gen</strong>(ib, file = &quot;iblinkinfo.xml&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Generate a XML formated Excel file from the IBLinkinfo data.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>ib</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="IBLinkInfo.html" title="IBLinkInfo (class)">IBLinkInfo</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The data derived from an iblinkinfo command, and parsed by the IBLinkInfo
+class parser</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>file</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;iblinkinfo.xml&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the output file.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'generators/gen_excel_xml.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_gen'>gen</span><span class='lparen'>(</span><span class='id identifier rubyid_ib'>ib</span><span class='comma'>,</span> <span class='id identifier rubyid_file'>file</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>iblinkinfo.xml</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='comment'>#Output Excel XML file
+</span>  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_file'>file</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>w</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_fd'>fd</span><span class='op'>|</span>
+    <span class='id identifier rubyid_excel_xml_header'>excel_xml_header</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='id identifier rubyid_ib'>ib</span><span class='period'>.</span><span class='id identifier rubyid_switches'>switches</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_ib'>ib</span><span class='period'>.</span><span class='id identifier rubyid_switch_location'>switch_location</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span><span class='id identifier rubyid_loc'>loc</span><span class='op'>|</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_loc'>loc</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:leaf</span> <span class='op'>||</span> <span class='id identifier rubyid_loc'>loc</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:ex_spine</span>
+        <span class='id identifier rubyid_excel_xml_table_start'>excel_xml_table_start</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='id identifier rubyid_k'>k</span><span class='rparen'>)</span>     
+        <span class='id identifier rubyid_v'>v</span> <span class='op'>=</span> <span class='id identifier rubyid_ib'>ib</span><span class='period'>.</span><span class='id identifier rubyid_switches'>switches</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span>
+        <span class='comment'>#puts v.class
+</span>        <span class='kw'>if</span> <span class='id identifier rubyid_v'>v</span> <span class='op'>!=</span> <span class='kw'>nil</span> 
+          <span class='comment'>#excel_xml_table_1st_header(fd)
+</span>          <span class='kw'>if</span> <span class='id identifier rubyid_k'>k</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>Mellanox 4036E.*</span><span class='regexp_end'>/</span></span>
+            <span class='id identifier rubyid_excel_xml_table_header'>excel_xml_table_header</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='int'>18</span><span class='comma'>,</span> <span class='int'>34</span><span class='comma'>,</span> <span class='int'>1</span> <span class='rparen'>)</span>
+            <span class='id identifier rubyid_excel_xml_row'>excel_xml_row</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='int'>18</span><span class='comma'>,</span> <span class='int'>34</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_ib'>ib</span><span class='period'>.</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span> 
+            <span class='comment'>#excel_xml_table_2nd_header(fd)
+</span>            <span class='id identifier rubyid_excel_xml_table_header'>excel_xml_table_header</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>17</span><span class='comma'>,</span> <span class='int'>1</span> <span class='rparen'>)</span>
+            <span class='id identifier rubyid_excel_xml_row'>excel_xml_row</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>17</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_ib'>ib</span><span class='period'>.</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+          <span class='kw'>else</span>
+            <span class='id identifier rubyid_excel_xml_table_header'>excel_xml_table_header</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>36</span><span class='comma'>,</span> <span class='int'>2</span> <span class='rparen'>)</span>
+            <span class='id identifier rubyid_excel_xml_row'>excel_xml_row</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>36</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_ib'>ib</span><span class='period'>.</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span> 
+            <span class='comment'>#excel_xml_table_2nd_header(fd)
+</span>            <span class='id identifier rubyid_excel_xml_table_header'>excel_xml_table_header</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>36</span><span class='comma'>,</span> <span class='int'>2</span> <span class='rparen'>)</span>
+            <span class='id identifier rubyid_excel_xml_row'>excel_xml_row</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>36</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_ib'>ib</span><span class='period'>.</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+          <span class='kw'>end</span>
+                  
+          <span class='id identifier rubyid_excel_xml_last_row'>excel_xml_last_row</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='rparen'>)</span>
+        <span class='kw'>else</span>
+          <span class='id identifier rubyid_v_nil'>v_nil</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='comment'>#hack to make code simpler. 36 empty ports, so we don&#39;t have to special case this.
+</span>            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='rbracket'>]</span>
+          <span class='id identifier rubyid_excel_xml_table_1st_header'>excel_xml_table_1st_header</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='rparen'>)</span>
+          <span class='id identifier rubyid_excel_xml_row'>excel_xml_row</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>19</span><span class='comma'>,</span> <span class='id identifier rubyid_v_nil'>v_nil</span><span class='comma'>,</span> <span class='id identifier rubyid_ib'>ib</span><span class='period'>.</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span> <span class='id identifier rubyid_loc'>loc</span><span class='rparen'>)</span>
+
+          <span class='id identifier rubyid_excel_xml_table_2nd_header'>excel_xml_table_2nd_header</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='rparen'>)</span>        
+          <span class='id identifier rubyid_excel_xml_row'>excel_xml_row</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='id identifier rubyid_v_nil'>v_nil</span><span class='comma'>,</span> <span class='id identifier rubyid_ib'>ib</span><span class='period'>.</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span> <span class='id identifier rubyid_loc'>loc</span><span class='rparen'>)</span>
+
+          <span class='id identifier rubyid_excel_xml_last_row'>excel_xml_last_row</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_excel_xml_footer'>excel_xml_footer</span><span class='lparen'>(</span><span class='id identifier rubyid_fd'>fd</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue May 26 16:43:50 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.2.2).
+</div>
+
+  </body>
+</html>
