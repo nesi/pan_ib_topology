@@ -9,7 +9,8 @@ require_relative 'generators/gen_wiki_old.rb'
 require_relative 'generators/gen_yml.rb'
 require_relative 'generators/gen_slurm.rb' #Slurm topology file
 
-config = Configuration.new
+@config = Configuration.new
+#@auth = Configuration.new((@config.auth[0] == '/') ? @config.auth : File.expand_path(File.dirname(__FILE__)) + @config.auth)
 begin
   Dir.chdir(config.base_directory)
 
