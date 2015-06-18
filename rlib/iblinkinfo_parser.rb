@@ -1,5 +1,6 @@
 require 'scanf'
 require 'pp'
+require_relative 'ib_attribute.rb'
 
 #Parse IBLinkinfo output.
 #Knowledge of the IB Switches is needed, and the compute nodes, so names can be associated with the iblinkinfo output.
@@ -51,10 +52,10 @@ class IBLinkInfo
         'MF0;ib0-is5300-c4-bip-m:IS5300/L10/U1' => ['C4/U5/L10', :leaf, 'IS5300/L10', '', 36],
         'MF0;ib0-is5300-c4-bip-m:IS5300/L12/U1' => ['C4/U5/L12', :leaf, 'IS5300/L12', '', 36],
 
-        'Mellanox 4036E # ib0gw-a2-001-m' => ['E1/A/U42', :leaf, '4036E-1', '', 36], # Now shows up with this name.
-        'Mellanox 4036E # ib0gw-a2-002-m' => ['E1/A/U43', :leaf, '4036E-2', '', 36], # Now shows up with this name.
+        'Mellanox 4036E # ib0gw-a2-001-m' => ['E1/A/U42', :leaf, '4036E-1', 'ib0gw-a2-001', 36], # Now shows up with this name.
+        'Mellanox 4036E # ib0gw-a2-002-m' => ['E1/A/U43', :leaf, '4036E-2', 'ib0gw-a2-002', 36], # Now shows up with this name.
 
-        'MF0;ib-sx6036-a2-004-m:SX6036/U1' => ['O15/U16', :leaf, 'SX6036-4', '', 36],
+        'MF0;ib-sx6036-a2-004-m:SX6036/U1' => ['O15/U16', :leaf, 'SX6036-4', 'sx6036-a2-004', 36],
 
         'MF0;ib0-is5200-a2-bip-m:IS5200/S01/U1' => ['C2/U5/S01', :spine, 'IS5200/S01', '', 36],
         'MF0;ib0-is5200-a2-bip-m:IS5200/S02/U1' => ['C2/U5/S02', :spine, 'IS5200/S02', '', 36],
@@ -73,14 +74,14 @@ class IBLinkInfo
         'MF0;ib0-is5300-c4-bip-m:IS5300/S08/U1' => ['C4/U5/S08', :spine, 'IS5300/S08', '', 36],
         'MF0;ib0-is5300-c4-bip-m:IS5300/S09/U1' => ['C4/U5/S09', :spine, 'IS5300/S09', '', 36],
 
-        'MF0;ib-sx6036-a2-001-m:SX6036/U1' => ['C2/U19', :ex_spine, 'SX6036-1', '', 36],
-        'MF0;ib-sx6036-a2-002-m:SX6036/U1' => ['C2/U36', :ex_spine, 'SX6036-2', '', 36],
-        'MF0;ib-sx6036-a2-003-m:SX6036/U1' => ['C2/U17', :ex_spine, 'SX6036-3', '', 36],
+        'MF0;ib-sx6036-a2-001-m:SX6036/U1' => ['C2/U19', :ex_spine, 'SX6036-1', 'ib-sx6036-a2-001', 36],
+        'MF0;ib-sx6036-a2-002-m:SX6036/U1' => ['C2/U36', :ex_spine, 'SX6036-2', 'ib-sx6036-a2-002', 36],
+        'MF0;ib-sx6036-a2-003-m:SX6036/U1' => ['C2/U17', :ex_spine, 'SX6036-3', 'ib-sx6036-a2-003', 36],
       }
     @switch_location = @location
     #Voltaire 10G
-    @location["Mellanox 4036E IO ib0gw-a2-001-m"] = ["10G", :node, "10G", ""] #10G ports on the Voltaire switches.
-    @location["Mellanox 4036E IO ib0gw-a2-002-m"] = ["10G", :node, "10G", ""]
+    @location["Mellanox 4036E IO ib0gw-a2-001-m"] = ["10G", :node, "10G", "ib0gw-a2-001"] #10G ports on the Voltaire switches.
+    @location["Mellanox 4036E IO ib0gw-a2-002-m"] = ["10G", :node, "10G", "ib0gw-a2-002"]
     #A1 Rack
     (1..42).each { |i| @location["compute-a1-#{"%03d"%i}-p HCA-1"] = ["A1/A/U#{i}",:cnode, "a1-#{"%03d"%i}", "compute-a1-#{"%03d"%i}"] }
     (2..15).each { |i| @location["compute-a1-#{"%03d"%(43+i-2)}-p HCA-1"] = ["A1/C/U#{i}", :cnode, "a1-#{"%03d"%(43+i-2)}", "compute-a1-#{"%03d"%(43+i-2)}"] }
@@ -129,23 +130,23 @@ class IBLinkInfo
     (1..22).each { |i| @location["compute-e1-#{"%03d"%i}-p HCA-1"] = ["A5/A/U#{i}", :cnode, "e1-#{"%03d"%i}", "compute-e1-#{"%03d"%i}"] }
     (2..23).each { |i| @location["compute-e1-#{"%03d"%(23+i-2)}-p HCA-1"] = ["A5/C/U#{i}", :cnode, "e1-#{"%03d"%(23+i-2)}", "compute-e1-#{"%03d"%(23+i-2)}"] }
     #A2 Rack
-    @location["vm-a2-001-p HCA-1"] = ["C4/U37/A", :node, "NeVE-1A", '']
-    @location["vm-a2-001-p HCA-2"] = ["C4/U37/B", :node, "NeVE-1B", '']
-    @location["vm-a2-002.ceres.auckland.ac.nz HCA-1"] = ["A2/U31/A", :node, "NeVE-2A", '']
-    @location["vm-a2-002.ceres.auckland.ac.nz HCA-2"] = ["A2/U31/B", :node, "NeVE-2B", '']
-    @location["vm-a2-003-p HCA-1"] = ["C4/U41/A", :node, "NeVE-3A", '']
-    @location["vm-a2-003-p HCA-2"] = ["C4/U41/B", :node, "NeVE-3B", '']
-    @location["login-p HCA-1"] = ["A2/U27/A", :node, "login-p/A", ''] #Alternate name for vm4
-    @location["login-p HCA-2"] = ["A2/U27/B", :node, "login-p/B", ''] #Alternate name for vm4
-    @location["pan HCA-1"] = ["A2/U23/A", :node, "pan", '']
-    @location["login1-p HCA-1"] = ["A2/U23/A", :node, "login1", ''] #Loadleveler ?
-    @location["xcat-p HCA-1"] = ["A2/U17/A", :node, "xcat/A", '']
-    @location["xcat-p HCA-3"] = ["A2/U17/B", :node, "xcat/B", '']
+    @location["vm-a2-001-p HCA-1"] = ["C4/U37/A", :node, "NeVE-1A", 'vm-a2-001']
+    @location["vm-a2-001-p HCA-2"] = ["C4/U37/B", :node, "NeVE-1B", 'vm-a2-001']
+    @location["vm-a2-002.ceres.auckland.ac.nz HCA-1"] = ["A2/U31/A", :node, "NeVE-2A", 'vm-a2-002']
+    @location["vm-a2-002.ceres.auckland.ac.nz HCA-2"] = ["A2/U31/B", :node, "NeVE-2B", 'vm-a2-002']
+    @location["vm-a2-003-p HCA-1"] = ["C4/U41/A", :node, "NeVE-3A", 'vm-a2-003']
+    @location["vm-a2-003-p HCA-2"] = ["C4/U41/B", :node, "NeVE-3B", 'vm-a2-003']
+    @location["login-p HCA-1"] = ["A2/U27/A", :node, "login-p/A", 'login'] #Alternate name for vm4
+    @location["login-p HCA-2"] = ["A2/U27/B", :node, "login-p/B", 'login'] #Alternate name for vm4
+    @location["pan HCA-1"] = ["A2/U23/A", :node, "pan", 'pan']
+    @location["login1-p HCA-1"] = ["A2/U23/A", :node, "login1", 'login1'] #Loadleveler ?
+    @location["xcat-p HCA-1"] = ["A2/U17/A", :node, "xcat/A", 'xcat']
+    @location["xcat-p HCA-3"] = ["A2/U17/B", :node, "xcat/B", 'xcat']
     #A3 Rack
-    @location["gpfs-a3-001-p HCA-1"] = ["A3/U1", :node, "gpfs1", '']
-    @location["gpfs-a3-002-p HCA-1"] = ["A3/U3", :node, "gpfs2", '']
-    @location["gpfs-a3-003-p HCA-1"] = ["A3/U5", :node, "gpfs3", '']
-    @location["gpfs-a3-004-p HCA-1"] = ["A3/U7", :node, "gpfs4", '']
+    @location["gpfs-a3-001-p HCA-1"] = ["A3/U1", :node, "gpfs1", 'gpfs-a3-001']
+    @location["gpfs-a3-002-p HCA-1"] = ["A3/U3", :node, "gpfs2", 'gpfs-a3-002']
+    @location["gpfs-a3-003-p HCA-1"] = ["A3/U5", :node, "gpfs3", 'gpfs-a3-003']
+    @location["gpfs-a3-004-p HCA-1"] = ["A3/U7", :node, "gpfs4", 'gpfs-a3-004']
     #C4 Rack
     @location["compute-bigmem-001-p HCA-1"] = ["A2/U27", :cnode, "bm-1", "compute-bigmem-001"]
     @location["compute-bigmem-001-p HCA-2"] = ["A2/U27", :cnode, "bm-1", "compute-bigmem-001"]
@@ -157,22 +158,22 @@ class IBLinkInfo
     @location["compute-bigmem-003-p HCA-2"] = ["A2/U35", :cnode, "bm-3", "compute-bigmem-003"]
     @location["compute-bigmem-004-p HCA-1"] = ["A2/U39", :cnode, "bm-4", "compute-bigmem-004"]
     @location["compute-bigmem-004-p HCA-2"] = ["A2/U39", :cnode, "bm-4", "compute-bigmem-004"]
-    @location["gpfs-a4-005-p HCA-1"] = ["C4/U25", :node, "gpfs5", '']
-    @location["gpfs-a4-006-p HCA-1"] = ["C4/U23", :node, "gpfs6", '']
-    @location["xcat2-p HCA-1"] = ["C4/U27", :node, "xcat2/A"]
+    @location["gpfs-a4-005-p HCA-1"] = ["C4/U25", :node, "gpfs5", 'gpfs-a4-005']
+    @location["gpfs-a4-006-p HCA-1"] = ["C4/U23", :node, "gpfs6", 'gpfs-a4-006']
+    @location["xcat2-p HCA-1"] = ["C4/U27", :node, "xcat2"]
     #Chem Rack
     @location["compute-chem-001-p HCA-1"] = ["C2/U31/A", :cnode, "chem1/A", "compute-chem-001"]
     @location["compute-chem-001-p HCA-2"] = ["C2/U31/B", :cnode, "chem1/B", "compute-chem-001"]
     #CS
-    @location["build-gpu-p HCA-1"] = ["C2/U29", :node, "build-gpu", '']
-    @location["build-sn-gpu-p HCA-1"] = ["?", :node, "build-sn-gpu", '']
+    @location["build-gpu-p HCA-1"] = ["C2/U29", :node, "build-gpu", 'build-gpu']
+    @location["build-sn-gpu-p HCA-1"] = ["?", :node, "build-sn-gpu", 'build-sn-gpu']
     @location["compute-cs-001-p HCA-1"] = ["C3/A/U35", :cnode, "cs-001", "compute-cs-001"]
     #Stats nodes
     (1..10).each { |i| @location["compute-stats-#{"%03d"%i}-p HCA-1"] = ["C2/U29/A", :cnode, "stats-#{"%03d"%i}", "compute-stats-#{"%03d"%i}"] }
     #FMHS
     (1..3).each { |i| @location["compute-fmhs-#{"%03d"%i}-p HCA-1"] = ["C2/U29/A", :cnode, "fmhs-#{"%03d"%i}", "compute-fmhs-#{"%03d"%i}"] }
     #Lustre
-    (1..8).each { |i| @location["lustre-dev-#{"%d"%i}-p HCA-1"] = ["C2/U29/A", :node, "lustre-dev-#{"%03d"%i}", ''] }
+    (1..8).each { |i| @location["lustre-dev-#{"%d"%i}-p HCA-1"] = ["C2/U29/A", :node, "lustre-dev-#{"%03d"%i}", "lustre-dev-#{"%d"%i}"] }
 
     @switches = {}
     @switch_lids = {}
@@ -199,7 +200,11 @@ class IBLinkInfo
         fields << c[-2].chomp('/') #Active or Down
         fields << c[-1].chomp(')') # LinkUp or Polling
         b[2].scanf('>    %4d %4d[%2c] "%[^"]" (%1c)').each { |v| fields << v } #Remote LID, Remote Port, ?, name
-        @switches[@switch][fields[1]] = fields
+        l = @location[fields[9]]
+        fields[10] = "#{l == nil ? fields[9] : "#{l[2]}/P#{"%02d"%fields[7]}"}" #Will be the short name
+        fields[11] = "#{l == nil ? nil : "#{l[1]}"}" #Node type
+        fields[12] = "#{l == nil ? nil : "#{l[3]}"}" #host basename
+        @switches[@switch][fields[1]] = IB_attribute.new(fields)
         @switch_lids[@switch] = fields[0] 
       end
     end
