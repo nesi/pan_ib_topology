@@ -104,13 +104,17 @@ class IBLinkInfo
     #C3 Rack
     (1..28).each { |i| @location["compute-c1-#{"%03d"%i}-p HCA-1"] = ["C3/A/U#{i}", :cnode, "c1-#{"%03d"%i}", "compute-c1-#{"%03d"%i}"] }
     (2..29).each { |i| @location["compute-c1-#{"%03d"%(29+i-2)}-p HCA-1"] = ["C3/C/U#{i}", :cnode, "c1-#{"%03d"%(29+i-2)}", "compute-c1-#{"%03d"%(29+i-2)}"] }
-    @location["compute-gpu-c1-001-p HCA-1"] = ["C3/A/U#{29}", :cnode, "c1-gpu-1", "compute-gpu-c1-001"]
+    @location["compute-gpu-c1-001-p HCA-1"] = ["C3/A/U#{29}", :cnode, "compute-gpu-c1-001-ib", "compute-gpu-c1-001"]
     @location["compute-gpu-c1-002-p HCA-1"] = ["C3/A/U#{31}", :cnode, "c1-gpu-2", "compute-gpu-c1-002"]
+    @location["compute-cs-002-p HCA-1"] = ["C3/A/U33", :cnode, "cs-002", "compute-cs-002"] #Plus empty GPU tray
+    #
     @location["compute-gpu-c1-003-p HCA-1"] = ["C3/C/U#{30}", :cnode, "c1-gpu-3", "compute-gpu-c1-003"]
     @location["compute-gpu-c1-004-p HCA-1"] = ["C3/C/U#{32}", :cnode, "c1-gpu-4", "compute-gpu-c1-004"]
     #New Ivybridge nodes in C3 Rack
     @location["compute-c1-057-p HCA-1"] = ["C3/C/U#{36}", :cnode, "c1-057", "compute-c1-057"]
     @location["compute-c1-058-p HCA-1"] = ["C3/C/U#{37}", :cnode, "c1-058", "compute-c1-058"]
+    @location["compute-cs-003-p HCA-1"] = ["C3/C/U#{38}", :cnode, "cs-003", "compute-cs-003"]
+    @location["compute-physics-001-p HCA-1"] = ["C3/C/U#{39}", :cnode, "physics-001", "compute-physics-001"]
     @location["compute-c1-059-p HCA-1"] = ["C3/A/U#{37}", :cnode, "c1-059", "compute-c1-059"]
     @location["compute-c1-060-p HCA-1"] = ["C3/A/U#{38}", :cnode, "c1-060", "compute-c1-060"]
     #A4 Rack
@@ -138,8 +142,9 @@ class IBLinkInfo
     @location["vm-a2-003-p HCA-2"] = ["C4/U41/B", :node, "NeVE-3B", 'vm-a2-003']
     @location["login-p HCA-1"] = ["A2/U27/A", :node, "login-p/A", 'login'] #Alternate name for vm4
     @location["login-p HCA-2"] = ["A2/U27/B", :node, "login-p/B", 'login'] #Alternate name for vm4
-    @location["pan HCA-1"] = ["A2/U23/A", :node, "pan", 'pan']
-    @location["login1-p HCA-1"] = ["A2/U23/A", :node, "login1", 'login1'] #Loadleveler ?
+    @location["transfer HCA-1"] = ["A2/U25/A", :node, "transfer", 'transfer']
+    @location["transfer HCA-2"] = ["A2/U25/A", :node, "transfer", 'transfer']
+    @location["login1-p HCA-1"] = ["A2/U23/A", :node, "login1", 'loadleveller'] #Loadleveler
     @location["xcat-p HCA-1"] = ["A2/U17/A", :node, "xcat/A", 'xcat']
     @location["xcat-p HCA-3"] = ["A2/U17/B", :node, "xcat/B", 'xcat']
     #A3 Rack
@@ -160,7 +165,7 @@ class IBLinkInfo
     @location["compute-bigmem-004-p HCA-2"] = ["A2/U39", :cnode, "bm-4", "compute-bigmem-004"]
     @location["gpfs-a4-005-p HCA-1"] = ["C4/U25", :node, "gpfs5", 'gpfs-a4-005']
     @location["gpfs-a4-006-p HCA-1"] = ["C4/U23", :node, "gpfs6", 'gpfs-a4-006']
-    @location["xcat2-p HCA-1"] = ["C4/U27", :node, "xcat2"]
+    @location["xcat2-p HCA-1"] = ["C4/U27", :node, "xcat2", "xcat2"]
     #Chem Rack
     @location["compute-chem-001-p HCA-1"] = ["C2/U31/A", :cnode, "chem1/A", "compute-chem-001"]
     @location["compute-chem-001-p HCA-2"] = ["C2/U31/B", :cnode, "chem1/B", "compute-chem-001"]
@@ -193,7 +198,7 @@ class IBLinkInfo
         @switch = fields[2..-1].join(' ').chomp(':')
         @switches[@switch] = []
       else
-        b = a.split('==')
+        b = a.gsub('(FDR10) ','').split('==')
         fields = b[0].scanf('       %4d %4d[%2c] ') #LID , Port, ?
         c = b[1].split(' ')
         fields << c[1..-3].join(' ') #Drop leading '('. Speed of connection.
@@ -204,6 +209,7 @@ class IBLinkInfo
         fields[10] = "#{l == nil ? fields[9] : "#{l[2]}/P#{"%02d"%fields[7]}"}" #Will be the short name
         fields[11] = "#{l == nil ? nil : "#{l[1]}"}" #Node type
         fields[12] = "#{l == nil ? nil : "#{l[3]}"}" #host basename
+        #puts "Switch #{@switch} port #{fields[1]}"
         @switches[@switch][fields[1]] = IB_attribute.new(fields)
         @switch_lids[@switch] = fields[0] 
       end
@@ -217,5 +223,3 @@ class IBLinkInfo
     end
   end
 end
-
-
