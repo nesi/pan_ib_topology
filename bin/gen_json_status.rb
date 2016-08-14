@@ -1,15 +1,16 @@
 #!/usr/local/bin/ruby
-require_relative 'rlib/configuration.rb'
-require_relative 'rlib/iblinkinfo_parser.rb'
-require_relative 'generators/gen_dot.rb'
-require_relative 'generators/gen_excel_xml.rb'
-require_relative 'generators/gen_tsv.rb'
-require_relative 'generators/gen_wiki.rb'
-require_relative 'generators/gen_wiki_old.rb'
-require_relative 'generators/gen_yml.rb'
-require_relative 'generators/gen_slurm.rb' #Slurm topology file
+require_relative '../rlib/configuration.rb'
+require_relative '../rlib/iblinkinfo_parser.rb'
+require_relative '../generators/gen_dot.rb'
+require_relative '../generators/gen_excel_xml.rb'
+require_relative '../generators/gen_tsv.rb'
+require_relative '../generators/gen_wiki.rb'
+require_relative '../generators/gen_wiki_old.rb'
+require_relative '../generators/gen_yml.rb'
+require_relative '../generators/gen_json.rb'
+require_relative '../generators/gen_slurm.rb' #Slurm topology file
 
-config_file = ARGV[0] == 'test' ? 'conf/local_config.json' : 'conf/config.json'
+config_file =  File.expand_path(File.dirname(__FILE__)) + (ARGV[0] == 'test' ? '/../conf/local_config.json' : '/../conf/config.json')
 @config = Configuration.new config_file
 #@auth = Configuration.new((@config.auth[0] == '/') ? @config.auth : File.expand_path(File.dirname(__FILE__)) + @config.auth)
 begin
@@ -24,7 +25,8 @@ begin
   #WIKI::gen(iblinkinfo, 'iblinkinfo_wiki.txt') #Generate Confluence Wiki tables for the switches, then manually add.
   #WIKI_Old::gen(iblinkinfo', 'iblinkinfo_wiki_old.txt') #Old confluence wiki table format.
   #YML::gen(iblinkinfo, 'iblinkinfo.yml') #Generate a YML file from the IBlinkinfo output
-  SLURM::gen(iblinkinfo, 'topology.conf') #Generate an Infiniband topology file for Slurm
+  #SLURM::gen(iblinkinfo, 'topology.conf') #Generate an Infiniband topology file for Slurm
+  JSON::gen_host_status(iblinkinfo, @config.html_directory+'/pan/status/rack_ib_state.json') #Generate an Infiniband topology file for Slurm
 rescue Exception=>error
   puts error
 end
